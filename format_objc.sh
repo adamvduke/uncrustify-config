@@ -17,4 +17,6 @@ fi
 
 echo Running formatter on $1
 
-uncrustify -l OC -c ./objc.conf --no-backup $(find $1 -name "*.[mh]")
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+uncrustify -l OC -c $DIR/objc.conf --no-backup $(find $1 -name "*.[mh]")
